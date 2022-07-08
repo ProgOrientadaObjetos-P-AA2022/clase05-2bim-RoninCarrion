@@ -3,30 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package paquete04;
+package paquete03;
 
 /**
  *
  * @author reroes
  */
-public class TransporteTaxi extends Transporte {
-    private String cooperativaTaxi;
+public class TransporteTransvia {
+    private String transvia;
+    private double tarifa;
     
-    
-    public void establecerCooperativaTaxi(String n){
-        cooperativaTaxi = n;
+    public void establecerTransporteTransvia(String n){
+        transvia = n;
     }
     
-    
-    @Override
     public void establecerTarifa(){
         tarifa = 0.40 + (0.40*0.5);
     }
     
-    
-    public String obtenerCooperativaTaxi(){
-        return cooperativaTaxi;
+    public String obtenerTransvia(){
+        return  transvia;
     }
-        
+    
+    public double obtenerTarifa(){
+        return tarifa;
+    }
+    
     
 }

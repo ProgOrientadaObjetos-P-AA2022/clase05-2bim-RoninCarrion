@@ -5,28 +5,29 @@
  */
 package paquete04;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author reroes
  */
-public class TransporteTaxi extends Transporte {
-    private String cooperativaTaxi;
+public class TransporteTransvia extends Transporte {
+    private String transvia;
     
     
     public void establecerCooperativaTaxi(String n){
-        cooperativaTaxi = n;
+        transvia = n;
     }
     
     
     @Override
     public void establecerTarifa(){
-        tarifa = 0.40 + (0.40*0.5);
+        tarifa = 2 + 0.5;
     }
     
     
     public String obtenerCooperativaTaxi(){
-        return cooperativaTaxi;
-    }
-        
-    
+        return transvia;
+    }  
 }

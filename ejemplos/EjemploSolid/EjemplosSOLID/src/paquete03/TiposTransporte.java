@@ -10,38 +10,65 @@ package paquete03;
  * @author reroes
  */
 public class TiposTransporte {
+
     private double promedioTarifas;
     private TransporteTaxi ttaxi;
     private TransporteBus ttbus;
     private TransporteTransvia transvia;
     private TransporteAereo aereo;
     private TransporteMaritimo maritimo;
-    
-    public void establecerTransporteTaxi(TransporteTaxi taxi){
+
+    public void establecerTransporteTaxi(TransporteTaxi taxi) {
         ttaxi = taxi;
     }
-    
-    public void establecerTransporteBus(TransporteBus bus){
-        ttbus = bus;
+
+    public void establecerTransporteBus(TransporteBus a) {
+        ttbus = a;
     }
-    
-    public TransporteTaxi obtenerTransporteTaxi(){
+
+    public void establecerTransvia(TransporteTransvia a) {
+        transvia = a;
+    }
+
+    public void establecerAereo(TransporteAereo a) {
+        aereo = a;
+    }
+
+    public void establecerMaritimo(TransporteMaritimo a) {
+        maritimo = a;
+    }
+
+    public TransporteTaxi obtenerTransporteTaxi() {
         return ttaxi;
     }
-    
-    public TransporteBus obtenerTransporteBus(){
+
+    public TransporteBus obtenerTransporteBus() {
         return ttbus;
     }
-    
-    public void establecerPromedioTarifas(){
-        promedioTarifas = (obtenerTransporteBus().obtenerTarifa() + 
-                obtenerTransporteTaxi().obtenerTarifa())/2;
-        
-    }
-    
-    public double obtenerPromedioTarifas(){
+
+    public double obtenerPromedioTarifas() {
         return promedioTarifas;
     }
-    
-    
+
+    public TransporteTransvia obtenerTransvia() {
+        return transvia;
+    }
+
+    public TransporteAereo obtenerAereo() {
+        return aereo;
+    }
+
+    public TransporteMaritimo obtenerMaritimo() {
+        return maritimo;
+    }
+
+    public void establecerPromedioTarifas() {
+        promedioTarifas = (obtenerTransporteBus().obtenerTarifa()
+                + obtenerTransporteTaxi().obtenerTarifa() + 
+                obtenerTransvia().obtenerTarifa()+
+                obtenerAereo().obtenerTarifa() + 
+                obtenerMaritimo().obtenerTarifa())/5;
+
+    }
+
 }

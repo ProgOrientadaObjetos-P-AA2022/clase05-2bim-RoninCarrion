@@ -4,7 +4,6 @@ S — Single responsibility principle
  */
 package paquete02;
 
-
 import java.util.ArrayList;
 
 /**
@@ -12,37 +11,28 @@ import java.util.ArrayList;
  * @author reroes
  */
 public class Persona {
+
     private String nombre;
     private int edad;
-    
-    public Persona(String n, int e){
+
+    public Persona(String n, int e) {
         nombre = n;
         edad = e;
     }
-    
-    public void establecerNombre(String n){
+
+    public void establecerNombre(String n) {
         nombre = n;
     }
-    
-    public void establecerEdad(int n){
+
+    public void establecerEdad(int n) {
         edad = n;
     }
-    
-    public String obtenerNombre(){
+
+    public String obtenerNombre() {
         return nombre;
     }
-    
-    public int obtenerEdad(){
+
+    public int obtenerEdad() {
         return edad;
-    }
-    
-    public double promedioEdades(ArrayList<Persona> lista){
-        double promedio = 0;
-        double suma = 0;
-        for (int i = 0; i < lista.size(); i++) {
-            suma = lista.get(i).obtenerEdad();
-        }
-        promedio = suma/lista.size();
-        return promedio;
     }
 }
