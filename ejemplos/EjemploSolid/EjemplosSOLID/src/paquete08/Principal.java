@@ -16,11 +16,11 @@ public class Principal {
         ensayo.establecerPromedioEnsayo();
         System.out.println(ensayo.obtenerPromedioEnsayo());
         
-        EvaluacionObjetiva ensayo2 = new EvaluacionObjetiva();
-        ensayo2.establecerNumeroPreguntas(10);
-        ensayo2.establecerTotalPreguntas(30);
-        ensayo2.establecerPromedioObjetivas();
-        System.out.println(ensayo2.obtenerPromedioObjetivas());
+        EvaluacionObjetiva evaluacionObjetiva = new EvaluacionObjetiva();
+        evaluacionObjetiva.establecerNumeroPreguntas(10);
+        evaluacionObjetiva.establecerTotalPreguntas(30);
+        evaluacionObjetiva.establecerPromedioObjetivas();
+        System.out.println(evaluacionObjetiva.obtenerPromedioObjetivas());
         
     }
 }

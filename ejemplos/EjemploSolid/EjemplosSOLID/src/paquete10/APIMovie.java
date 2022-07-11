@@ -9,7 +9,7 @@ package paquete10;
  *
  * @author reroes
  */
-public interface APIMovie {
+public interface APIMovie{
     
     public void establecerApiKey(String ak);
     

@@ -31,20 +31,24 @@ public class EvaluacionEnsayo extends Evaluacion{
     }
     
     
+    @Override
     public void establecerPromedioObjetivas(){
         throw new RuntimeException("Sin implementar establecerPromedioObjetivas");
     }
     
+    @Override
     public double obtenerPromedioObjetivas(){
         throw new RuntimeException("Sin implementar obtenerPromedioObjetivas");
     }
     
+    @Override
     public void establecerPromedioEnsayo(){
           
           promedioEnsayo = obtenerTotalProblemas()/obtenerNumeroProblemas();
 
     }
     
+    @Override
     public double obtenerPromedioEnsayo(){
           return promedioEnsayo;
 

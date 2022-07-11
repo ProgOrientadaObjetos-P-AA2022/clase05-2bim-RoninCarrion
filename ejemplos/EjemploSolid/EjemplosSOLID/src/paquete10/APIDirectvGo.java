@@ -1,14 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package paquete10;
 
 import java.io.Serializable;
 
-
-public class APIAmazonMovie implements APIMovie, Serializable{
+/**
+ *
+ * @author ronni
+ */
+public class APIDirectvGo implements APIMovie, Serializable{
     
     private String apiKey;
     
@@ -21,5 +23,5 @@ public class APIAmazonMovie implements APIMovie, Serializable{
     public String obtenerApiKey(){
         return apiKey;
     }
-    
+     
 }
