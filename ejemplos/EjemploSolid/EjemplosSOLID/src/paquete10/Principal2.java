@@ -15,77 +15,62 @@ import java.util.ArrayList;
  */
 public class Principal2 {
 
-    private String nombreArchivo;
-    private ObjectOutputStream salida; // envía los datos a un archivo
-    private ArrayList<GeneradorPeliculas> lista;
-    private String mensaje;
+    public static void main(String[] args) {
+        String nombre = "C:\\Users\\ronni\\OneDrive\\Escritorio\\"
+                + "Pelis.txt";
 
-    public Principal2(String nombreArc, ArrayList<GeneradorPeliculas> re) {
+        System.out.println("\n\tNETFLIX");
 
-        nombreArchivo = nombreArc;
-        lista = re;
+        ArrayList<GeneradorPeliculas> generador = new ArrayList<>();
+        APINetflix api = new APINetflix();
+        api.establecerApiKey("123455");
 
-        establecerLista(); // obtener los valores (objetos)
-        // que tiene el archivo.
-        // System.out.println(obtenerListaProfesores().size());
+        GeneradorPeliculas gp = new GeneradorPeliculas();
+        gp.establecerLlave(api);
+        gp.establecerUrl("http://api.movie?api=");
+        System.out.println(gp.obtenerUrl());
+        generador.add(gp);
 
- // fin de catch
-    }
+        System.out.println("---------------------------\n\tAMAZON MOVIE");
 
-    public void establecerMensaje(String a) {
-        mensaje = a;
-    }
+        APIAmazonMovie api2 = new APIAmazonMovie();
+        api2.establecerApiKey("123455");
 
-    public void establecerNombreArchivo(String n) {
-        nombreArchivo = n;
-    }
+        GeneradorPeliculas gp2 = new GeneradorPeliculas();
+        gp2.establecerLlave(api2);
+        gp2.establecerUrl("http://api.movie?api=");
+        System.out.println(gp2.obtenerUrl());
+        generador.add(gp2);
+        System.out.println("---------------------------\n\tSTAR PLUS");
 
-    // agrega generadors al archivo
-    public void establecerSalida() {
+        APIStarPlus api3 = new APIStarPlus();
+        api3.establecerApiKey("123455");
+
+        GeneradorPeliculas gp3 = new GeneradorPeliculas();
+        gp3.establecerLlave(api3);
+        gp3.establecerUrl("http://api.movie?api=");
+        System.out.println(gp3.obtenerUrl());
+        generador.add(gp3);
+
+        System.out.println("---------------------------\n\tDIRECTV GO");
+
+        APIDirectvGo api4 = new APIDirectvGo();
+        api4.establecerApiKey("123455");
+
+        GeneradorPeliculas gp4 = new GeneradorPeliculas();
+        gp4.establecerLlave(api4);
+        gp4.establecerUrl("http://api.movie?api=");
+        System.out.println(gp4.obtenerUrl());
+        generador.add(gp4);
+
         try {
-            for (int i = 0; i < lista.size(); i++) {
-                salida.writeObject(lista.get(i)); // envía el generador como salida  
+            ObjectOutputStream archivo = new ObjectOutputStream(new FileOutputStream(nombre));
+            for (GeneradorPeliculas a:generador) {
+                archivo.writeObject(a);   
             }
-
-        } catch (IOException ex) {
-            System.err.println("Error al escribir en el archivo.");
+        } catch (IOException e) {
+            System.out.println("Ha ocurrido un error\n" + e);
         }
-    }
 
-    // en el atributo listaProfesores obtenemos los generadors 
-    // del archivo
-    public void establecerLista() {
-        Principal3 l = new Principal3(obtenerNombreArchivo());
-        l.establecerListaGeneradorPeliculas();
-        lista = l.obtenerListaGeneradorPeliculas();
-    }
-
-    public String obtenerNombreArchivo() {
-        return nombreArchivo;
-    }
-
-    public String obtenerMensaje() {
-        return mensaje;
-    }
-
-    public ArrayList<GeneradorPeliculas> obtenerLista() {
-        return lista;
-    }
-
-    public ObjectOutputStream obtenerSalida() {
-        return salida;
-    }
-
-    public void cerrarArchivo() {
-        try // cierra el archivo
-        {
-            if (salida != null) {
-                salida.close();
-            }
-        } // fin de try
-        catch (IOException ioException) {
-            System.err.println("Error al cerrar el archivo.");
-
-        } // fin de catch
     }
 }

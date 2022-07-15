@@ -69,10 +69,6 @@ public class Principal3 {
 
     }
 
-    public void establecerIdentificador(String a) {
-        identificador = a;
-    }
-
 
     public ArrayList<GeneradorPeliculas> obtenerListaGeneradorPeliculas() {
         return generador;
@@ -82,13 +78,7 @@ public class Principal3 {
         return nombreArchivo;
     }
 
-    public String obtenerIdentificador() {
-        return identificador;
-    }
 
-    public GeneradorPeliculas obtenerGeneradorPeliculasBuscado() {
-        return GeneradorPeliculasBuscado;
-    }
 
     @Override
     public String toString() {
